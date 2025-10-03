@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante Sabor Vivo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    const button = document.querySelector('.nav__toggle');
+    const nav = document.querySelector('.nav');
+
+    button.addEventListener('click', () => {
+
+      const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+      button.setAttribute('aria-expanded', !expanded);
+
+      nav.classList.toggle('is-open');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header_content">
+      <a href="#" class="logo">Sabor<span>Vivo</span></a>
+      <nav class="nav is-open">
+        <a href="#hero">Início</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#contato">Contato</a>
+        <a href="#reservas" class="btn--sm">Reservar</a>
+      </nav>
+      <button class="nav_toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Sabores que encantam, momentos que <br> ficam</h1>
+        <p class="hero-subtitle">Cozinha autoral com ingredientes frescos e locais.</p>
+        <a href="#cardapio" class="btn">Ver Cardápio</a>
+      </div>
+    </section>
+
+    <section id="cardapio" class="cardapio section">
+      <div class="container">
+        <h2 class="section__title">Nosso Cardápio</h2>
+        <p class="section__subtitle">Pratos preparados com técnica, paixão e um toque de criatividade.</p>
+
+        <!-- APENAS UM .grid envolvendo todos os cards -->
+        <div class="grid">
+          <article class="card">
+            <div class="card-image">
+              <img src="./img/risoto.png" alt="Risoto de Cogumelos">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Risoto de Cogumelos</h3>
+              <p class="card-desc">Cremoso, finalizado com azeite trufado e parmesão.</p>
+              <span class="card-price">R$ 49,90</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="./img/smash-burger.webp" alt="Smash Burger Artesanal">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Smash Burger Artesanal</h3>
+              <p class="card-desc">Blend da casa, cheddar, cebola caramelizada e pão brioche.</p>
+              <span class="card-price">R$ 34,90</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="./img/salada-mediteranea.webp" alt="Salada Mediterrânea">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Salada Mediterrânea</h3>
+              <p class="card-desc">Folhas, tomate sweet, azeitonas, feta e vinagrete cítrico.</p>
+              <span class="card-price">R$ 29,90</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="./img/nhoque-ao-sugo.jpg" alt="Nhoque ao Sugo">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Nhoque ao Sugo</h3>
+              <p class="card-desc">Macio e leve, molho de tomates assados e manjericão.</p>
+              <span id="card-price-2" class="card-price">R$ 39,90</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="./img/file-ao-poivre.jpg" alt="Filé ao Poivre">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Filé ao Poivre</h3>
+              <p class="card-desc">Filé mignon grelhado ao molho cremoso de pimenta e conhaque, finalizado com ervas
+                frescas.</p>
+              <span class="card-price">R$ 69,90</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="./img/cheesecake.jpg" alt="Cheesecake">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cheesecake</h3>
+              <p class="card-desc">Clássico com calda de frutas vermelhas e toque de limão.</p>
+              <span id="card-price-2" class="card-price">R$ 24,90</span>
+            </div>
+          </article>
+        </div> <!-- fim .grid -->
+      </div> <!-- fim .container -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info" id="contato">
+        <h2 class="logo">Sabor<span>Vivo</span></h2>
+        <p>Rua das Flores, 123 — Centro, Cidade/UF</p>
+        <p>(11) 99999-0000 • contato@saborvivo.com</p>
+      </div>
+
+      <div class="footer-social">
+        <h3>Siga-nos</h3>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" id="reservas">
+      <p>© 2025 Sabor Vivo. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.querySelector('.nav_toggle');
+      const nav = document.querySelector('.nav');
+
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+        button.setAttribute('aria-expanded', !expanded);
+        nav.classList.toggle('is-open');
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+
+</body>
+
+</html>
